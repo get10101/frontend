@@ -1,0 +1,43 @@
+{
+  "name": "itchysats",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/icons": "^1.0.16",
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^12.0.2",
+    "@types/jest": "^25.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "5.3.1",
+    "framer-motion": "^4",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
+    "react-dom": "^17.0.2",
+    "react-icons": "^3.0.0",
+    "react-refresh": "^0.10.0",
+    "react-router-dom": "5.3.0",
+    "react-scripts": "4.0.3",
+    "react-sse-hooks": "^1.0.5",
+    "web-vitals": "^0.2.2",
+    "@vitejs/plugin-react": "^1.0.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.4"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
