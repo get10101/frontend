@@ -1,7 +1,7 @@
 ## Itchy Sats Frontend
 
-Derivatives peer-to-peer trading on Bitcoin is the future. 
-This is the portal to this future. 
+Derivatives peer-to-peer trading on Bitcoin is the future.
+This is the portal to this future.
 
 ### `yarn start`
 

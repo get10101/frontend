@@ -20,7 +20,11 @@ import {
     PopoverTrigger,
     SimpleGrid,
     Spinner,
+    Table,
+    Tbody,
+    Td,
     Text,
+    Tr,
     useColorModeValue,
     useToast,
     VStack,
@@ -53,20 +57,6 @@ const History = ({ cfds, title }: HistoryProps) => {
 };
 
 export default History;
-
-interface TitleValueProps {
-    title: String;
-    value: String;
-}
-
-function TitleValue({ title, value }: TitleValueProps) {
-    return (
-        <HStack>
-            <Text align={"left"} as={"b"}>{title}</Text>
-            <Text align={"right"}>{value}</Text>
-        </HStack>
-    );
-}
 
 interface CfdDetailsProps {
     cfd: Cfd;
@@ -121,14 +111,31 @@ const CfdDetails = ({ cfd }: CfdDetailsProps) => {
 
     return (
         <HStack bg={useColorModeValue("gray.100", "gray.700")} rounded={5}>
-            <Center bg={useColorModeValue("gray.200", "gray.600")} rounded={5} h={"100%"}>
-                <VStack>
-                    <TitleValue title={"Opening price"} value={initialPrice} />
-                    <TitleValue title={"Quantity"} value={quantity} />
-                    <TitleValue title={"Margin"} value={margin} />
-                    <TitleValue title={"Unrealized P/L:"} value={pAndL.toString()} />
-                    <TitleValue title={"Liquidation"} value={liquidationPrice} />
-                </VStack>
+            <Center rounded={5} h={"100%"}>
+                <Table variant="striped" colorScheme="gray" size="sm">
+                    <Tbody>
+                        <Tr>
+                            <Td><Text as={"b"}>Quantity</Text></Td>
+                            <Td>{quantity}</Td>
+                        </Tr>
+                        <Tr>
+                            <Td><Text as={"b"}>Opening price</Text></Td>
+                            <Td>{initialPrice}</Td>
+                        </Tr>
+                        <Tr>
+                            <Td><Text as={"b"}>Liquidation</Text></Td>
+                            <Td>{liquidationPrice}</Td>
+                        </Tr>
+                        <Tr>
+                            <Td><Text as={"b"}>Margin</Text></Td>
+                            <Td>{margin}</Td>
+                        </Tr>
+                        <Tr>
+                            <Td><Text as={"b"}>Unrealized P/L</Text></Td>
+                            <Td>{pAndL.toString()}</Td>
+                        </Tr>
+                    </Tbody>
+                </Table>
             </Center>
             <VStack>
                 <Badge colorScheme={cfd.state.getColorScheme()}>{cfd.state.getLabel()}</Badge>
