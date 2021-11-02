@@ -33,8 +33,7 @@ async function getMargin(payload: MarginRequestPayload): Promise<MarginResponse>
 }
 
 async function postCfdOrderRequest(payload: CfdOrderRequestPayload) {
-    // TODO: url should not be hardcoded but the proxy does not seem to catch this one?!
-    let res = await fetch(`http://127.0.0.1:3002/api/cfd/order`, { method: "POST", body: JSON.stringify(payload) });
+    let res = await fetch(`/api/cfd/order`, { method: "POST", body: JSON.stringify(payload) });
     if (!res.status.toString().startsWith("2")) {
         console.log(`Error${JSON.stringify(res)}`);
         throw new Error("failed to create new CFD order request: " + res.status + ", " + res.statusText);
